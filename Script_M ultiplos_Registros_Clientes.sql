@@ -1,0 +1,25 @@
+INSERT INTO clientes
+(
+SELECT tc.CPF
+, tc.NOME
+, tc.ENDERECO_1
+, tc.BAIRRO
+, tc.CIDADE
+, tc.ESTADO
+, tc.CEP
+, tc.DATA_DE_NASCIMENTO
+, tc.IDADE
+, tc.SEXO
+, tc.LIMITE_DE_CREDITO
+, tc.VOLUME_DE_COMPRA
+, tc.PRIMEIRA_COMPRA
+FROM TABELA_DE_CLIENTES tc
+LEFT JOIN CLIENTES c
+ON tc.cpf = c.cpf
+WHERE c.cpf IS NULL
+);
+
+
+select * from clientes;
+
+
